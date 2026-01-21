@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Canva Fonts Memory Test</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="control-panel">
+        <!-- Service Worker Section -->
+        <div class="control-section">
+            <h3>Service Worker</h3>
+            <div class="sw-status">
+                <span class="status-indicator inactive" id="swStatusIndicator"></span>
+                <span id="swStatusText">Checking...</span>
+            </div>
+            <div class="sw-toggle-row">
+                <span class="sw-toggle-label">Enable SW</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="swToggle" onchange="handleToggleChange(event)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Canvas Stats Section -->
+        <div class="control-section">
+            <h3>Elements</h3>
+            <div class="canvas-stats">
+                <div class="stat-item">
+                    <span class="memory-indicator"></span>
+                    <span>Total added:</span>
+                    <span class="stat-value" id="elementCount">0</span>
+                </div>
+            </div>
+            <div class="element-count-display" id="targetElementCount">100</div>
+            <div class="element-info">Number to add</div>
+            <div class="element-buttons">
+                <button class="element-btn decrease" onclick="decreaseElements()">-50</button>
+                <button class="element-btn" onclick="increaseElements()">+50</button>
+                <button class="action-btn add" onclick="addElements()">Add them!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Canvas Area -->
+    <div class="design-canvas" id="designCanvas">
+        <!-- Elements will be dynamically added here -->
+    </div>
+</body>
+</html>
