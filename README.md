@@ -62,25 +62,25 @@ And to test with the service worker enabled:
 
 ### Our results
 
-We found that running with the service worker enabled uses significantly more memory compared to not using it. This difference was less pronounced on a low tier device, but still a significant increase in both the WebView app and Safari. 
+We ran the profiler 5 times for each of the below scenarios and averaged the results. There is a clear and significant increase in physical memory footprint when the service worker is enabled. The actual profile traces are in the `traces` folder in this repository.
 
 #### Results on an iPhone Air
 
-| Env | Test case | Peak physical memory footprint | Peak private resident memory |
-| :--- | :--- | ---: | ---: |
-| App | No SW | 580MiB | 190MiB |
-| App | SW | 1.26GiB (+117%) | 300MiB (+58%) |
-| Safari | No SW | 804MiB | 163MiB |
-| Safari | SW | 1.13GiB  (+40%)| 370MiB (+126%) |
+| Env | Test case | Peak physical memory footprint |
+| :--- | :--- | ---: |
+| App | No SW | 707MiB |
+| App | SW | 1.04GiB (+51%) |
+| Safari | No SW | 754MiB |
+| Safari | SW | 944MiB  (+25%)|
 
 #### Results on an iPhone SE
 
-| Env | Test case | Peak physical memory footprint | Peak private resident memory |
-| :--- | :--- | ---: | ---: |
-| App | No SW | 622MiB | 142MiB |
-| App | SW | 723MiB (+16%) |  169MiB (+19%) |
-| Safari | No SW | 496MiB | 141MiB |
-| Safari | SW | 673MiB (+35%) | 235MiB (+67%) |
+| Env | Test case | Peak physical memory footprint |
+| :--- | :--- | ---: |
+| App | No SW | 504MiB |
+| App | SW | 728MiB (+44%) |
+| Safari | No SW | 424MiB |
+| Safari | SW | 772MiB (+82%) |
 
 ### Memory Profiling Setup
 

@@ -1,0 +1,71 @@
+Air, App, No SW
+Physical , Private resident
+1: 635, 138
+2: 770, 170
+3: 647, 146
+4: 874, 131
+5: 609, 149
+Avg: 707, 147
+
+Air, App, SW
+Physical, Private resident
+1: 1.12GiB, 297
+2: 1008, 326
+3: 1.11GiB, 286
+4: 1.05GiB, 264
+5: 956, 281
+Avg: 1.04GiB (+51%), 291 (+98%)
+
+Air, Safari, No SW
+Physical , Private resident
+1: 744, 189
+2: 726, 125
+3: 691, 176
+4: 755, 137
+5: 853, 172
+Avg: 754, 160
+
+Air, Safari, SW
+Physical, Private resident
+1: 987, 305
+2: 816, 297
+3: 1.07GiB, 273
+4: 854, 296
+5: 968, 292
+Avg: 944 (+25%), 293 (+83%)
+
+SE, App, No SW
+Physical, Private resident
+1: 570, 196
+2: 471, 172
+3: 494, 174
+4: 447, 113
+5: 539, 166
+Avg: 504, 164
+
+SE, App, SW
+Physical, Private resident
+1: 780, 274
+2: 735, 320
+3: 680, 375
+4: 770, 289
+5: 674, 243
+Avg: 728 (+44%), 300 (+83%)
+
+SE, Safari, No SW
+Physical, Private resident
+1: 353, 167
+2: 413, 151
+3: 520, 178
+4: 424, 160
+5: 410, 151
+Avg: 424, 161
+
+SE, Safari, SW
+Physical, Private resident
+1: 795, 218
+2: 712, 251
+3: 642, 176
+4: 920, 331
+5: 789, 258
+Avg: 772 (+82%), 247 (+53%)
