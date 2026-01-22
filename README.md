@@ -2,11 +2,9 @@
 
 This repository contains web pages for testing Service Worker functionality and memory usage in an iOS webview app.
 
-## Reproduction steps
+## Preparing the app
 
-### Running in the app
-
-To profile the app, do these steps:
+To run the app in the profiler, first do these steps:
 
 1. Open the iOS app (in the `ios` folder) in xcode.
 1. Select the top level `SimpleWebViewApp` item in the project explorer.
@@ -14,14 +12,19 @@ To profile the app, do these steps:
 1. Change the Bundle Identifier from `com.benfred.SimpleWebViewApp` to `com.somethingelse.SimpleWebViewApp`.
 1. Click the "Run" button to build and install the app onto a connected device.
 
+## Crash reproduction steps
+
+### Running in the app
+
 Then, to test with the service worker disabled:
 1. Close the app if it is open and relaunch it
 1. Click the "Launch WebView" Test button
 1. If the status of the service worker is shown as "Controlled", turn off the Enable SW toggle and wait for the page to reload.
 1. The service worker status should show as "Not Controlled".
 1. Start recording in the profiler (see below for setup details)
-1. Click the "Add them!" button to add the selected number of elements (the default is 100)
+1. Click the "Add them!" button to add 100 elements
 1. Wait for the element count to reach the selected number
+1. Repeat the last two steps another 29 times (30 total) to add 3000 element.
 1. Stop recording
 1. Observe the memory in the captured profile.
 
@@ -31,8 +34,9 @@ And to test with the service worker enabled:
 1. If the status of the service worker is shown as "Not Controlled", turn on the Enable SW toggle and wait for the page to reload.
 1. The service worker status should show as "Controlled".
 1. Start recording in the profiler (see below for setup details)
-1. Click the "Add them!" button to add the selected number of elements (the default is 100)
+1. Click the "Add them!" button to add 100 elements
 1. Wait for the element count to reach the selected number
+1. Repeat the last two steps another 29 times (30 total) to add 3000 element.
 1. Stop recording
 1. Observe the memory in the captured profile.
 
@@ -45,8 +49,9 @@ To test with the service worker disabled:
 1. If the status of the service worker is shown as "Controlled", turn off the Enable SW toggle and wait for the page to reload, then close and reopen Safari.
 1. The service worker status should show as "Not Controlled".
 1. Start recording in the profiler (see below for setup details)
-1. Click the "Add them!" button to add the selected number of elements (the default is 100)
+1. Click the "Add them!" button to add 100 elements
 1. Wait for the element count to reach the selected number
+1. Repeat the last two steps another 29 times (30 total) to add 3000 element.
 1. Stop recording
 1. Observe the memory in the captured profile.
 
@@ -55,8 +60,70 @@ And to test with the service worker enabled:
 1. If the status of the service worker is shown as "Not Controlled", turn on the Enable SW toggle and wait for the page to reload, then close and reopen Safari.
 1. The service worker status should show as "Controlled".
 1. Start recording in the profiler (see below for setup details)
-1. Click the "Add them!" button to add the selected number of elements (the default is 100)
+1. Click the "Add them!" button to add 100 elements
 1. Wait for the element count to reach the selected number
+1. Repeat the last two steps another 29 times (30 total) to add 3000 element.
+1. Stop recording
+1. Observe the memory in the captured profile.
+
+### Our results
+
+We ran the above test 3 times. The results for the iPhone Air were very consistent:
+
+| Env | Test case | Crashes |
+| :--- | :--- | ---: |
+| App | No SW | 2 |
+| App | SW | 3 (+50%) |
+| Safari | No SW | 2 |
+| Safari | SW | 3 (+50%)|
+
+## Memory use reproduction steps
+
+### Running in the app
+
+To test with the service worker disabled:
+1. Close the app if it is open and relaunch it
+1. Click the "Launch WebView" Test button
+1. If the status of the service worker is shown as "Controlled", turn off the Enable SW toggle and wait for the page to reload.
+1. The service worker status should show as "Not Controlled".
+1. Start recording in the profiler (see below for setup details)
+1. Click the "Add them!" button to add the 100 elements
+1. Wait for the element count to reach the 100
+1. Stop recording
+1. Observe the memory in the captured profile.
+
+And to test with the service worker enabled:
+1. Close the app if it is open and relaunch it
+1. Click the "Launch WebView" Test button
+1. If the status of the service worker is shown as "Not Controlled", turn on the Enable SW toggle and wait for the page to reload.
+1. The service worker status should show as "Controlled".
+1. Start recording in the profiler (see below for setup details)
+1. Click the "Add them!" button to add the 100 elements
+1. Wait for the element count to reach the 100
+1. Stop recording
+1. Observe the memory in the captured profile.
+
+### Running in Safari
+
+To profile in Safari, do these steps:
+
+To test with the service worker disabled:
+1. Start Safari and navigate to `benfredwells.github.io/sw-demo`
+1. If the status of the service worker is shown as "Controlled", turn off the Enable SW toggle and wait for the page to reload, then close and reopen Safari.
+1. The service worker status should show as "Not Controlled".
+1. Start recording in the profiler (see below for setup details)
+1. Click the "Add them!" button to add the 100 elements
+1. Wait for the element count to reach the 100
+1. Stop recording
+1. Observe the memory in the captured profile.
+
+And to test with the service worker enabled:
+1. Start Safari and navigate to `benfredwells.github.io/sw-demo`
+1. If the status of the service worker is shown as "Not Controlled", turn on the Enable SW toggle and wait for the page to reload, then close and reopen Safari.
+1. The service worker status should show as "Controlled".
+1. Start recording in the profiler (see below for setup details)
+1. Click the "Add them!" button to add the 100 elements
+1. Wait for the element count to reach the 100
 1. Stop recording
 1. Observe the memory in the captured profile.
 

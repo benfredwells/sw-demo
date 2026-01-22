@@ -1,3 +1,5 @@
+## Memory
+
 Air, App, No SW
 Physical , Private resident
 1: 635, 138
@@ -69,3 +71,17 @@ Physical, Private resident
 4: 920, 331
 5: 789, 258
 Avg: 772 (+82%), 247 (+53%)
+
+## Crashes
+
+Air, App, No SW
+Crashes: 2, 2, 2
+
+Air, App, SW
+Crashes: 3, 3, 3
+
+Air, Safari, No SW
+Crashes: 2, 2, 2
+
+Air, Safari, SW
+Crashes: 3, 3, 3
