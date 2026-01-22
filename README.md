@@ -75,9 +75,9 @@ We ran the above test 3 times. The average number of crashes where:
 | Env | Test case | Crashes on iPhone Air | Crashes on iPhone SE |
 | :--- | :--- | ---: | ---: |
 | App | No SW | 2 | 1 |
-| App | SW | 3 (+50%) | 3.33 (+233%) |
+| App | SW | 3 (**+50%**) | 3.33 (**+233%**) |
 | Safari | No SW | 2 | 1.33 |
-| Safari | SW | 3 (+50%)| 3 (+125%) |
+| Safari | SW | 3 (**+50%**)| 3 (**+125%**) |
 
 **Note there was an interesting pattern observed with the crashes when service worker was enabled.** The odd numbered incarnations of the webview (e.g. the first and third) lasted much shorter than the even numbered incarnations (the second and fourth). The even numbered seemed to live a comparable time to the non-service worker versions while the odd were much shorter.
 
@@ -140,18 +140,18 @@ We ran the profiler 5 times for each of the below scenarios and averaged the res
 | Env | Test case | Peak physical memory footprint |
 | :--- | :--- | ---: |
 | App | No SW | 707MiB |
-| App | SW | 1.04GiB (+51%) |
+| App | SW | 1.04GiB (**+51%**) |
 | Safari | No SW | 754MiB |
-| Safari | SW | 944MiB  (+25%)|
+| Safari | SW | 944MiB  (**+25%**)|
 
 #### Results on an iPhone SE
 
 | Env | Test case | Peak physical memory footprint |
 | :--- | :--- | ---: |
 | App | No SW | 504MiB |
-| App | SW | 728MiB (+44%) |
+| App | SW | 728MiB (**+44%**) |
 | Safari | No SW | 424MiB |
-| Safari | SW | 772MiB (+82%) |
+| Safari | SW | 772MiB (**+82%**) |
 
 ### Memory Profiling Setup
 
