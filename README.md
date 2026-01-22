@@ -2,6 +2,8 @@
 
 This repository contains web pages for testing Service Worker functionality and memory usage in an iOS webview app.
 
+Note - the raw results of all experiments are in `results.txt`, and the profile traces are in the `traces` folder.
+
 ## Preparing the app
 
 To run the app in the profiler, first do these steps:
@@ -68,14 +70,16 @@ And to test with the service worker enabled:
 
 ### Our results
 
-We ran the above test 3 times. The results for the iPhone Air were very consistent:
+We ran the above test 3 times. The average number of crashes where:
 
-| Env | Test case | Crashes |
-| :--- | :--- | ---: |
-| App | No SW | 2 |
-| App | SW | 3 (+50%) |
-| Safari | No SW | 2 |
-| Safari | SW | 3 (+50%)|
+| Env | Test case | Crashes on iPhone Air | Crashes on iPhone SE |
+| :--- | :--- | ---: | ---: |
+| App | No SW | 2 | 1 |
+| App | SW | 3 (+50%) | 3.33 (+233%) |
+| Safari | No SW | 2 | 1.33 |
+| Safari | SW | 3 (+50%)| 3 (+125%) |
+
+**Note there was an interesting pattern observed with the crashes when service worker was enabled.** The odd numbered incarnations of the webview (e.g. the first and third) lasted much shorter than the even numbered incarnations (the second and fourth). The even numbered seemed to live a comparable time to the non-service worker versions while the odd were much shorter.
 
 ## Memory use reproduction steps
 
@@ -129,7 +133,7 @@ And to test with the service worker enabled:
 
 ### Our results
 
-We ran the profiler 5 times for each of the below scenarios and averaged the results. There is a clear and significant increase in physical memory footprint when the service worker is enabled. The actual profile traces are in the `traces` folder in this repository.
+We ran the profiler 5 times for each of the below scenarios and averaged the results. There is a clear and significant increase in physical memory footprint when the service worker is enabled.
 
 #### Results on an iPhone Air
 

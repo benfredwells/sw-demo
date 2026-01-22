@@ -85,3 +85,15 @@ Crashes: 2, 2, 2
 
 Air, Safari, SW
 Crashes: 3, 3, 3
+
+SE, App, No SW
+Crashes: 1, 1, 1
+
+SE, App, SW
+Crashes: 3, 3, 4
+
+SE, Safari, No SW
+Crashes: 2, 1, 1
+
+SE, Safari, SW
+Crashes: 3, 3, 3
